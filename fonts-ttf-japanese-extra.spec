@@ -1,7 +1,7 @@
 Summary:	Free Japanese TrueType fonts
 Name:		fonts-ttf-japanese-extra
 Version:	0.20040217
-Release:	4mdk
+Release:	%mkrel 5
 License:	Distributable
 URL:		http://sourceforge.jp/projects/mplus-fonts/
 Group:		System/Fonts/True type
