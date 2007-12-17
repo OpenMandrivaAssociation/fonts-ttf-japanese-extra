@@ -14,7 +14,6 @@ Group:		System/Fonts/True type
 Source0:	%{name}-%{version}.tar.bz2
 
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	freetype-tools
 Obsoletes:	xtt-fonts
 Provides:	xtt-fonts
