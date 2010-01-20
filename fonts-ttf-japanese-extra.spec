@@ -1,7 +1,7 @@
 Summary:	Japanese TrueType fonts
 Name:		fonts-ttf-japanese-extra
 Version:	0.20040217
-Release:	%mkrel 10
+Release:	%mkrel 11
 License:	Distributable
 URL:		http://sourceforge.jp/projects/mplus-fonts/
 Group:		System/Fonts/True type
@@ -18,8 +18,6 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	freetype-tools
 Obsoletes:	xtt-fonts
 Provides:	xtt-fonts
-Requires(post): fontconfig
-Requires(postun): fontconfig
 
 %description
 This Package provides Free Japanese TrueType fonts (alternative Kochi fonts:
@@ -46,15 +44,6 @@ cd %buildroot/%_datadir/fonts/ttf/japanese-extra/
 /usr/sbin/ttmkfdir > fonts.scale
 cp fonts.scale fonts.dir
 cd -
-
-%post
-[ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
-
-%postun
-# 0 means a real uninstall
-if [ "$1" = "0" ]; then
-   [ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
-fi
 
 %clean
 rm -fr %buildroot
