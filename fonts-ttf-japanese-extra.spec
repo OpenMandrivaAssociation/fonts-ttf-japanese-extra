@@ -15,7 +15,7 @@ Source0:	%{name}-%{version}.tar.bz2
 
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	freetype-tools
+BuildRequires:	mkfontscale
 Obsoletes:	xtt-fonts
 Provides:	xtt-fonts
 
@@ -30,7 +30,6 @@ kochi-gothic-subst, kochi-mincho-subst)
 %build
 tar xfj docs.tar.bz2
 
-
 %install
 rm -fr %buildroot
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/japanese-extra
@@ -41,7 +40,7 @@ ln -s ../../..%_datadir/fonts/ttf/japanese-extra \
     %{buildroot}%_sysconfdir/X11/fontpath.d/ttf-japanese-extra:pri=50
 
 cd %buildroot/%_datadir/fonts/ttf/japanese-extra/
-/usr/sbin/ttmkfdir > fonts.scale
+mkfontscale
 cp fonts.scale fonts.dir
 cd -
 
