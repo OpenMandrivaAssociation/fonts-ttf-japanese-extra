@@ -14,6 +14,7 @@ Group:		System/Fonts/True type
 Source0:	%{name}-%{version}.tar.bz2
 
 BuildArch:	noarch
+BuildRequires: fontconfig
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	mkfontscale
 Obsoletes:	xtt-fonts
